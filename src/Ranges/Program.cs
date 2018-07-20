@@ -8,7 +8,7 @@ class Program
         var last = ^1;
         if (text?.Length >= 2 && text[0] == '"' && text[last] == '"')
         {
-            text = text.Substring(1, text.Length - 1);
+            text = text.Substring(1..^1);
         }
 
         WriteLine(text);
