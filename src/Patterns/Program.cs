@@ -27,7 +27,7 @@ class Program
                 $"Dr. {p.LastName}, Professor of {p.Subject}",
             Student s =>
                 $"{s.FirstName}, Student of Dr. {s.Advisor.LastName}",
-            Person p when p.LastName == "Campbell" =>
+            Person { LastName: "Campbell" } p =>
                 $"Please, enroll, {p.FirstName}",
             _ =>
                 "Come back next year!"
