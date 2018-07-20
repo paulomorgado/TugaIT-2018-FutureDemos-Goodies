@@ -25,8 +25,8 @@ class Program
         {
             Professor (_, var ln, var s) =>
                 $"Dr. {ln}, Professor of {s}",
-            Student (var fn, _, var a) =>
-                $"{fn}, Student of Dr. {a.LastName}",
+            Student (var fn, _, var (_, ln, _)) =>
+                $"{fn}, Student of Dr. {ln}",
             { LastName: "Campbell", FirstName: var fn } =>
                 $"Please, enroll, {fn}",
             _ =>
