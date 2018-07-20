@@ -5,7 +5,8 @@ class Program
 {
     static void PrintBanner(string text)
     {
-        if (text?.Length >= 2 && text[0] == '"' && text[^1] == '"')
+        var last = ^1;
+        if (text?.Length >= 2 && text[0] == '"' && text[last] == '"')
         {
             text = text.Substring(1, text.Length - 1);
         }
