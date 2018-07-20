@@ -17,13 +17,14 @@ class Program
     static void PrintNumbers()
     {
         int[] array = new int[10];
+        Span<int> slice = array[4..8];
         for (int i = 0; i < array.Length; i++) array[i] = i;
-        foreach (var v in array) WriteLine(v);
+        foreach (var v in slice) WriteLine(v);
     }
 
     static void Main(string[] args)
     {
-        PrintBanner('"' + "The Mads and Dustin Show" + '"');
-        //PrintNumbers();
+        //PrintBanner('"' + "The Mads and Dustin Show" + '"');
+        PrintNumbers();
     }
 }
