@@ -23,10 +23,10 @@ class Program
     {
         return person switch
         {
-            Professor p =>
-                $"Dr. {p.LastName}, Professor of {p.Subject}",
-            Student s =>
-                $"{s.FirstName}, Student of Dr. {s.Advisor.LastName}",
+            Professor (_, var ln, var s) =>
+                $"Dr. {ln}, Professor of {s}",
+            Student (var fn, _, var a) =>
+                $"{fn}, Student of Dr. {a.LastName}",
             { LastName: "Campbell", FirstName: var fn } =>
                 $"Please, enroll, {fn}",
             _ =>
