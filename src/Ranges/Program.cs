@@ -17,7 +17,7 @@ class Program
     static void PrintNumbers()
     {
         int[] array = new int[10];
-        Span<int> slice = array[4..];
+        Span<int> slice = array[..8];
         for (int i = 0; i < array.Length; i++) array[i] = i;
         foreach (var v in slice) WriteLine(v);
     }
