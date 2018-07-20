@@ -27,8 +27,8 @@ class Program
                 $"Dr. {p.LastName}, Professor of {p.Subject}",
             Student s =>
                 $"{s.FirstName}, Student of Dr. {s.Advisor.LastName}",
-            Person { LastName: "Campbell" } p =>
-                $"Please, enroll, {p.FirstName}",
+            Person { LastName: "Campbell", FirstName: var fn } =>
+                $"Please, enroll, {fn}",
             _ =>
                 "Come back next year!"
         };
