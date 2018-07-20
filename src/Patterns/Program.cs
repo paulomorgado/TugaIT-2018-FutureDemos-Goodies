@@ -21,17 +21,17 @@ class Program
 
     static string M(Person person)
     {
-        switch (person)
+        return person switch
         {
-            case Professor p:
-                return $"Dr. {p.LastName}, Professor of {p.Subject}";
-            case Student s:
-                return $"{s.FirstName}, Student of Dr. {s.Advisor.LastName}";
-            case Person p when p.LastName == "Campbell":
-                return $"Please, enroll, {p.FirstName}";
-            case _:
-                return "Come back next year!";
-        }
+            Professor p =>
+                $"Dr. {p.LastName}, Professor of {p.Subject}",
+            Student s =>
+                $"{s.FirstName}, Student of Dr. {s.Advisor.LastName}",
+            Person p when p.LastName == "Campbell" =>
+                $"Please, enroll, {p.FirstName}",
+            _ =>
+                "Come back next year!"
+        };
     }
 }
 
